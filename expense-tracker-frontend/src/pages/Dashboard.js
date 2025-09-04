@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API from '../api'; // import api.js
 import {
   BarChart,
   Bar,
@@ -30,7 +31,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/expenses`, {
+        const response = await API.get("/api/expenses", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setData(response.data);

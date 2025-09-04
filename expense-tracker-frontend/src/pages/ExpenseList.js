@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/ExpenseList.css";
 import { FaTrash, FaEdit, FaEye, FaSearch } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
+import API from '../api'; // import api.js
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -18,7 +19,7 @@ const ExpenseList = () => {
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/expenses`, {
+      const res = await API.get("/api/expenses", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setExpenses(res.data);

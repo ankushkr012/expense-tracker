@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import '../styles/Login.css';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import API from '../api'; // import api.js
 import { toast } from 'react-toastify';
 
 const Login = ({ setIsLoggedIn, setUsername }) => {
@@ -14,7 +14,7 @@ const Login = ({ setIsLoggedIn, setUsername }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
+      const res = await API.post("/api/auth/login", {
         email,
         password,
       });

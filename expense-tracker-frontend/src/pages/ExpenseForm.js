@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/ExpenseForm.css';
+import API from '../api'; // import api.js
 import axios from 'axios';
 
 const ExpenseForm = () => {
@@ -42,8 +43,7 @@ const ExpenseForm = () => {
     console.log('Submitting expense:', payload); // ✅ debug log
 
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/expenses/add`,
+      const res = await API.post("/api/expenses/add",
         payload,
         {
           headers: {

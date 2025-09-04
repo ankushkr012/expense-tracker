@@ -4,6 +4,7 @@ import axios from 'axios';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import API from '../api'; // import api.js
 import '../styles/Register.css';
 
 const Register = () => {
@@ -60,7 +61,7 @@ const Register = () => {
     const { name, email, password } = formData;
 
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
+      const res = await API.post("/api/auth/register", {
         name,
         email,
         password,

@@ -1,0 +1,130 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/ExpenseForm.css';
+import axios from 'axios';
+
+const ExpenseForm = () => {
+  const [expense, setExpense] = useState({
+    title: '',
+    payMode: 'Cash',
+    amount: '',
+    status: 'Paid',
+    date: '',
+  });
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setExpense((prev) => ({
+      ...prev,
+      [name]: name === 'amount' ? Number(value) : value, // ✅ force amount to number
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem('token');
+
+    if (!user || !token) {
+      alert('User not logged in');
+      return;
+    }
+
+    const payload = {
+      ...expense,
+      userId: user._id,
+    };
+
+    console.log('Submitting expense:', payload); // ✅ debug log
+
+    try {
+      const res = await axios.post(
+        'http://localhost:5000/api/expenses/add',
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (res.status === 201) {
+        navigate('/list');
+      }
+    } catch (err) {
+      console.error('Error saving expense:', err.response?.data || err.message);
+      alert(err.response?.data?.message || 'Expense save failed');
+    }
+  };
+
+  return (
+    <div className="expense-form-container">
+      <form className="expense-form" onSubmit={handleSubmit}>
+        <h2>Add New Expense</h2>
+
+        <div className="form-row">
+          <div className="form-group">
+            <label>Title</label>
+            <input
+              name="title"
+              placeholder="Title"
+              required
+              value={expense.title}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Pay Mode</label>
+            <select name="payMode" value={expense.payMode} onChange={handleChange}>
+              <option value="Cash">Cash</option>
+              <option value="UPI">UPI</option>
+              <option value="Card">Card</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Amount</label>
+            <input
+              name="amount"
+              type="number"
+              placeholder="₹"
+              required
+              value={expense.amount}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Status</label>
+            <select name="status" value={expense.status} onChange={handleChange}>
+              <option value="Paid">Paid</option>
+              <option value="Pending">Pending</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Date</label>
+            <input
+              name="date"
+              type="date"
+              required
+              value={expense.date}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
+        <div className="button-wrapper">
+          <button type="submit" className="submit-btn">Add Expense</button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default ExpenseForm;

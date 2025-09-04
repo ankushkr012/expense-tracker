@@ -1,0 +1,39 @@
+/* layout.css */
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Always full screen height */
+  background: linear-gradient(135deg, #f3f4f6, #e0f2fe); /* soft gradient */
+  overflow: hidden; /* Prevent extra scrollbars */
+}
+
+/* Main content between Navbar and Footer */
+.layout-content {
+  flex: 1; /* Pushes footer to bottom */
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .layout-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-content {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,66 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(90vh - 120px);
+}
+
+.register-form {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #066aff;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.input-group .icon {
+  margin-right: 10px;
+  color: #051318;
+}
+
+.input-group input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #066aff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}

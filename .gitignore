@@ -1,0 +1,16 @@
+# Node.js
+node_modules
+.env
+
+# Build files
+expense-tracker-frontend/build
+expense-tracker-frontend/dist
+expense-tracker-backend/build
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,18 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+ background: linear-gradient(90deg, #552f83, #3549fa);
+  color: white;
+  font-weight: 500;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: 998;
+}
+
+.footer.hidden {
+  transform: translateY(100%);
+}

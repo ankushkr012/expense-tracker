@@ -13,16 +13,18 @@ connectDB();
 
 
 // ✅ Secure CORS Setup
+// Add your frontend URL exactly
 const corsOptions = {
   origin: [
-    "http://localhost:3000",          // local frontend (dev)
-    "https://expensetracker-apps.netlify.app/" // deployed frontend (prod)
+    "http://localhost:3000", // local dev
+    "https://expensetracker-apps.netlify.app" // your Netlify frontend URL
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 };
-app.use(cors(corsOptions));
 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // preflight request support
 
 
 // Middleware

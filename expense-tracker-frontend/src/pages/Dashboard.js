@@ -30,7 +30,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/expenses", {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/expenses`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setData(response.data);

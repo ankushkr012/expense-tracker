@@ -11,15 +11,35 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
+
+// ✅ Secure CORS Setup
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",          // local frontend (dev)
+    "https://your-frontend.netlify.app" // deployed frontend (prod)
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+};
+app.use(cors(corsOptions));
+
+
+
 // Middleware
-app.use(cors()); 
+
 app.use(express.json()); // Parses incoming JSON requests
+
 
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use("/uploads", express.static("uploads"));
 
+
+// Health Check Route (optional but good for Render)
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: "Backend running fine 🚀" });
+});
 
 // Default Route (Optional)
 app.get('/', (req, res) => {

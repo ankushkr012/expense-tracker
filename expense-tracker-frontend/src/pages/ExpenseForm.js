@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/ExpenseForm.css';
 import API from '../api'; // import api.js
-import axios from 'axios';
+
 
 const ExpenseForm = () => {
   const [expense, setExpense] = useState({

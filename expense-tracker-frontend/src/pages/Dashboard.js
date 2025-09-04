@@ -14,7 +14,6 @@ import {
 } from "recharts";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-import axios from "axios";
 import "../styles/Dashboard.css";
 import { FaChartBar, FaChartPie } from "react-icons/fa";
 

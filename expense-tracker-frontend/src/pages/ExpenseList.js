@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "../styles/ExpenseList.css";
 import { FaTrash, FaEdit, FaEye, FaSearch } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
@@ -32,7 +31,7 @@ const ExpenseList = () => {
 useEffect(() => {
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/expenses", {
+      const res = await API.get("/api/expenses", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setExpenses(res.data);
@@ -61,8 +60,8 @@ useEffect(() => {
   /* ===== Edit Expense ===== */
   const handleSaveEdit = async () => {
     try {
-      await axios.put(
-        `http://localhost:5000/api/expenses/${editingExpense._id}`,
+      await API.put(
+        `/api/expenses/${editingExpense._id}`,
         editingExpense,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -82,7 +81,7 @@ useEffect(() => {
   /* ===== Delete Expense ===== */
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/expenses/${confirmDeleteId}`, {
+      await API.delete(`/api/expenses/${confirmDeleteId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Expense deleted!");

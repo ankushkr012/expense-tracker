@@ -16,7 +16,7 @@ connectDB();
 const corsOptions = {
   origin: [
     "http://localhost:3000",          // local frontend (dev)
-    "https://your-frontend.netlify.app" // deployed frontend (prod)
+    "https://expensetracker-apps.netlify.app/" // deployed frontend (prod)
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true

@@ -12,7 +12,7 @@ const Layout = ({ children, isLoggedIn, username, handleLogout }) => {
         handleLogout={handleLogout}
       />
       <main className="layout-content">{children}</main>
-      <Footer />
+     {/* <Footer />*/}
     </div>
   );
 };

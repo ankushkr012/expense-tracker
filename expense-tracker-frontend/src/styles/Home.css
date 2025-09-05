@@ -1,124 +1,188 @@
-/* ==========================
-   General Hero Section
-========================== */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(95vh - 120px); /* Adjust for navbar + footer */
-  padding: 2rem;
-  text-align: center;
-  overflow: hidden;
-  
+/* ===== GLOBAL STYLES ===== */
+.home-page {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
 }
 
-/* ==========================
-   Hero Content Animation
-========================== */
-.hero-content {
-  max-width: 650px;
-  background-color: #2f4f6c;
-  padding: 2rem;
-  border-radius: 15px;
-  background: #833AB4;
-background: linear-gradient(90deg, rgb(22, 45, 193) 0%, rgb(35, 23, 87) 50%, rgb(104, 49, 105) 100%);
-  animation: fadeInUp 1.2s ease forwards;
-  transform: translateY(30px);
-  opacity: 0;
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  color: white;
+  flex-wrap: wrap;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text h1 span {
+  color: #ffd600;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: #ffd600;
+  color: #333;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-img {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 1s ease forwards;
+}
+
+.hero-img img {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.hero-img img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f4f6f9;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: #2575fc;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6a11cb;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: #ffd600;
+  color: #333;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px);}
+  100% { opacity: 1; transform: translateX(0);}
 }
 
 @keyframes fadeInUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  0% { opacity: 0; transform: translateY(50px);}
+  100% { opacity: 1; transform: translateY(0);}
 }
 
-/* ==========================
-   Headings & Text
-========================== */
-.hero-content h1 {
-  font-size: 2.4rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin: 0.8rem 0;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  gap: 8px;
-}
-
-/* ==========================
-   Icons Animation
-========================== */
-.hero-icon {
-  font-size: 1.6rem;
-  color: #ff0000;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-/* ==========================
-   CTA Button
-========================== */
-.cta-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.8rem;
-  font-size: 1rem;
-  color: white;
-  background: linear-gradient(135deg, #7e2eff, #f81717);
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-}
-
-/* ==========================
-   Responsive Design
-========================== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .hero-content {
-    padding: 1.5rem;
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
   }
-  .hero-content h1 {
-    font-size: 2rem;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .hero-content p {
-    font-size: 1rem;
-    flex-direction: column;
-  }
-}
 
-@media (max-width: 480px) {
-  .hero-content {
-    padding: 1rem;
+  .hero-text h1 {
+    font-size: 2rem;
   }
-  .cta-btn {
-    padding: 0.7rem 1.4rem;
-    font-size: 0.9rem;
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-btn, .cta-btn {
+    padding: 12px 25px;
+    font-size: 0.95rem;
   }
 }

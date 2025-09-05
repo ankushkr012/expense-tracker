@@ -47,7 +47,7 @@ const Navbar = ({ isLoggedIn, username, handleLogout }) => {
       {/* Fullscreen Overlay for Mobile */}
       {menuOpen && (
         <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`}>
-          <button className="nclose-btn" onClick={() => setMenuOpen(false)}>✕</button>
+         
           {isLoggedIn ? (
             <>
                <Link to="/list" className="nav-link" onClick={() => setMenuOpen(false)}><FaBriefcase /> Work</Link>

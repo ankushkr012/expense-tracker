@@ -5,10 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(90vh - 120px); /* Adjust for navbar + footer */
+  min-height: calc(95vh - 120px); /* Adjust for navbar + footer */
   padding: 2rem;
   text-align: center;
   overflow: hidden;
+  
 }
 
 /* ==========================
@@ -16,10 +17,11 @@
 ========================== */
 .hero-content {
   max-width: 650px;
-   background-color: white;
+  background-color: #2f4f6c;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: #833AB4;
+background: linear-gradient(90deg, rgb(22, 45, 193) 0%, rgb(35, 23, 87) 50%, rgb(104, 49, 105) 100%);
   animation: fadeInUp 1.2s ease forwards;
   transform: translateY(30px);
   opacity: 0;
@@ -37,21 +39,24 @@
 ========================== */
 .hero-content h1 {
   font-size: 2.4rem;
-  color: #222;
+  color: #ffffff;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #444;
+  color: #ffffff;
   margin: 0.8rem 0;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   gap: 8px;
 }
 
@@ -60,7 +65,7 @@
 ========================== */
 .hero-icon {
   font-size: 1.6rem;
-  color: #ff7043;
+  color: #ff0000;
   animation: bounce 1.5s infinite;
 }
 
@@ -82,10 +87,12 @@
   padding: 0.8rem 1.8rem;
   font-size: 1rem;
   color: white;
-  background: linear-gradient(135deg, #0011ff, #7d60ff);
+  background: linear-gradient(135deg, #7e2eff, #f81717);
   border-radius: 25px;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 /* ==========================

@@ -8,12 +8,27 @@
 }
 
 .layout-wrapper {
+  position: relative; /* Needed for overlay */
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Always full screen height */
-  background: linear-gradient(135deg, #f3f4f6, #e0f2fe); /* soft gradient */
-  overflow: hidden; /* Prevent extra scrollbars */
+  min-height: 100vh;
+  overflow: hidden;
 }
+
+/* Background with blur */
+.layout-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://images.unsplash.com/photo-1707157284454-553ef0a4ed0d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+  filter: blur(6px); /* Adjust blur strength */
+  z-index: -1; /* Behind content */
+}
+
+
 
 /* Main content between Navbar and Footer */
 .layout-content {

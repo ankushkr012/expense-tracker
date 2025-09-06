@@ -9,7 +9,7 @@ const Home = () => {
       {/* ===== Hero Section ===== */}
       <section className="hero">
         <div className="hero-text">
-          <h1>Take Control of Your <span>Finances</span></h1>
+          <h1>Manage Your Expenses Eaisly With<span> Xpens</span></h1>
           <p>Track, analyze, and manage your expenses with ease.</p>
           <Link to="/register" className="hero-btn">
             <FaUserPlus /> Get Started

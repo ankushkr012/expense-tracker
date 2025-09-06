@@ -10,7 +10,7 @@ const Navbar = ({ isLoggedIn, username, handleLogout }) => {
     <nav className="navbar">
       <div className="navbar-left">
         <Link to={isLoggedIn ? '/form' : '/'} className="navbar-logo">
-          💰 ExpTracker
+          💰 Xpens
         </Link>
       </div>
 

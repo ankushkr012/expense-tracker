@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+//import Footer from "../components/Footer";
 import "../styles/layout.css";
 
 const Layout = ({ children, isLoggedIn, username, handleLogout }) => {
@@ -12,7 +12,7 @@ const Layout = ({ children, isLoggedIn, username, handleLogout }) => {
         handleLogout={handleLogout}
       />
       <main className="layout-content">{children}</main>
-     {/* <Footer />*/}
+     {/* <Footer /> */}
     </div>
   );
 };

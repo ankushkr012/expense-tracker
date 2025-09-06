@@ -2,6 +2,7 @@
 .home-page {
   font-family: "Segoe UI", sans-serif;
   color: #333;
+  
 }
 
 /* ===== HERO SECTION ===== */
@@ -78,7 +79,7 @@
 .features {
   padding: 4rem 2rem;
   text-align: center;
-  background: #f4f6f9;
+  background: #333;
 }
 
 .features h2 {
@@ -91,11 +92,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+ 
 }
 
 .feature-card {
   border-radius: 20px;
   padding: 2rem 1.5rem;
+   background-color: rgb(223, 220, 216);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -113,38 +116,7 @@
   color: #6a11cb;
 }
 
-/* ===== CTA SECTION ===== */
-.cta {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
-  color: white;
-}
 
-.cta h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  background: #ffd600;
-  color: #333;
-  font-weight: bold;
-  border-radius: 50px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.cta-btn:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInLeft {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaFileAlt, FaMoneyBill, FaWallet, FaCheckCircle, FaCalendarAlt } from 'react-icons/fa'; // ✅ icons
 import '../styles/ExpenseForm.css';
-import API from '../api'; // import api.js
-
+import API from '../api';
 
 const ExpenseForm = () => {
   const [expense, setExpense] = useState({
@@ -20,7 +20,7 @@ const ExpenseForm = () => {
 
     setExpense((prev) => ({
       ...prev,
-      [name]: name === 'amount' ? Number(value) : value, // ✅ force amount to number
+      [name]: name === 'amount' ? Number(value) : value,
     }));
   };
 
@@ -40,16 +40,11 @@ const ExpenseForm = () => {
       userId: user._id,
     };
 
-    console.log('Submitting expense:', payload); // ✅ debug log
-
     try {
-      const res = await API.post("/api/expenses/add",
+      const res = await API.post(
+        '/api/expenses/add',
         payload,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        { headers: { Authorization: `Bearer ${token}` } }
       );
 
       if (res.status === 201) {
@@ -67,8 +62,10 @@ const ExpenseForm = () => {
         <h2>Add New Expense</h2>
 
         <div className="form-row">
-          <div className="form-group">
-            <label>Title</label>
+
+          {/* Title */}
+          <div className="input-icon">
+            <FaFileAlt className="icon" />
             <input
               name="title"
               placeholder="Title"
@@ -78,8 +75,9 @@ const ExpenseForm = () => {
             />
           </div>
 
-          <div className="form-group">
-            <label>Pay Mode</label>
+          {/* Pay Mode */}
+          <div className="input-icon">
+            <FaWallet className="icon" />
             <select name="payMode" value={expense.payMode} onChange={handleChange}>
               <option value="Cash">Cash</option>
               <option value="UPI">UPI</option>
@@ -87,28 +85,31 @@ const ExpenseForm = () => {
             </select>
           </div>
 
-          <div className="form-group">
-            <label>Amount</label>
+          {/* Amount */}
+          <div className="input-icon">
+            <FaMoneyBill className="icon" />
             <input
               name="amount"
               type="number"
-              placeholder="₹"
+              placeholder="₹ Amount"
               required
               value={expense.amount}
               onChange={handleChange}
             />
           </div>
 
-          <div className="form-group">
-            <label>Status</label>
+          {/* Status */}
+          <div className="input-icon">
+            <FaCheckCircle className="icon" />
             <select name="status" value={expense.status} onChange={handleChange}>
               <option value="Paid">Paid</option>
               <option value="Pending">Pending</option>
             </select>
           </div>
 
-          <div className="form-group">
-            <label>Date</label>
+          {/* Date */}
+          <div className="input-icon">
+            <FaCalendarAlt className="icon" />
             <input
               name="date"
               type="date"

@@ -1,18 +1,21 @@
+/* 🌙 DARK THEME ExpenseList.css */
 
-/* ExpenseList.css - Beautiful Searchbar + Responsive Table */
 /* Container */
 .expense-list {
   padding: 20px;
   margin: auto;
   font-family: 'Segoe UI', sans-serif;
+  background-color: #333;
+  color: #e0e0e0;
 }
 
+/* Heading */
 .heading {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  font-weight: 500;
-  color: #ffffff;
+  font-weight: 600;
+  color: #f1f1f1;
 }
 
 /* Search Bar Container */
@@ -22,10 +25,10 @@
   justify-content: space-between;
   max-width: 400px;
   margin: 0 auto 1rem auto;
-   background-color: rgb(196, 196, 196);
+  background-color: #333;
   border-radius: 10px;
   padding: 6px 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.306);
 }
 
 .search-bar-wrapper input {
@@ -36,11 +39,12 @@
   font-size: 1rem;
   padding: 6px;
   font-weight: 500;
+  color: #f1f1f1;
 }
 
 .search-icon {
   font-size: 1.2rem;
-  color: #555;
+  color: #bbb;
 }
 
 /* Result count */
@@ -48,31 +52,37 @@
   margin-bottom: 1rem;
   text-align: center;
   font-weight: 500;
-  color: #ff0000;
+  color: #ff2020;
 }
 
 /* Table Wrapper */
 .table-wrapper {
   overflow-x: auto;
   padding: 23px;
-  background-color: #f7f7f7;
+  background-color: #333;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.306);
 }
 
+/* Scroll */
 .table-scroll-wrapper {
-  max-height: 390px;
+  max-height: 400px;
   overflow-y: auto;
-  border-radius: 12px;
 }
 
 .table-scroll-wrapper::-webkit-scrollbar {
   width: 6px;
 }
 .table-scroll-wrapper::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background-color: #555;
   border-radius: 3px;
 }
 .table-scroll-wrapper::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: #222;
 }
 
 /* Table */
@@ -82,35 +92,32 @@
   border-spacing: 0;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.306);
 }
 
 .expense-table thead {
   background-color: #333;
-  color: white;
+  color: #f1f1f1;
   font-weight: 500;
 }
 
 .expense-table th,
 .expense-table td {
-  padding: 10px 10px;
+  padding: 20px 10px;
   text-align: left;
   font-weight: 500;
-  border-bottom: 1px solid rgb(215, 204, 204);
+  border-bottom: 1px solid #333;
+  color: #ddd;
 }
 
 .expense-table tbody tr:hover {
-  
+  background: #2a2a2a;
   transition: background 0.2s;
 }
 
 /* Status colors */
-.status-cell.paid { color: #27ae60; font-weight: 500; }
-.status-cell.pending { color: #e74c3c; font-weight: 500; }
+.status-cell.paid { color: #27ae60; font-weight: 600; }
+.status-cell.pending { color: #e74c3c; font-weight: 600; }
 
 /* Actions */
 .actions .action-icon {
@@ -131,7 +138,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,16 +148,17 @@
 
 /* Modal card */
 .modal {
-   background: linear-gradient(135deg, #cacaca, #d5d5d5); /* soft gradient */
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
   padding: 30px 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 90%;
   max-width: 450px;
-  color: #000000;
+  color: #f1f1f1;
   text-align: left;
   animation: slideDown 0.4s ease;
   position: relative;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 /* Modal heading */
@@ -158,8 +166,8 @@
   margin-bottom: 20px;
   font-size: 1.8rem;
   text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #6c92ff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /* Modal content text */
@@ -167,9 +175,9 @@
   margin: 8px 0;
   font-size: 1rem;
   line-height: 1.5;
-  border-bottom: 2px solid rgba(189, 189, 189, 0.3);
+  border-bottom: 1px solid #333;
   padding-bottom: 5px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ddd;
 }
 
 /* Input fields (Edit Modal) */
@@ -181,6 +189,8 @@
   border: none;
   outline: none;
   font-size: 1rem;
+  background: #333;
+  color: #f1f1f1;
 }
 
 /* Buttons */
@@ -191,7 +201,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
@@ -219,120 +229,20 @@
   background: linear-gradient(45deg, #43e97b, #38f9d7);
 }
 
-.modal-actions button:first-child:hover {
-  transform: scale(1.05);
-}
-
 .modal-actions button:last-child {
   background: linear-gradient(45deg, #fa709a, #fee140);
-  color: #333;
+  color: #111;
 }
 
-.modal-actions button:last-child:hover {
-  transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
+/* MOBILE RESPONSIVE TABLE - show only Title & Actions */
 @media (max-width: 480px) {
-  .expense-list {
-    padding: 16px;
-    max-width: 100%;
-    font-size: 0.75rem;
-    background-color: #f0f4f8; /* light background */
-  }
-
-  .heading {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #2c3e50;
-    font-weight: 700;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-
-  .search-bar-wrapper {
-    width: 100%;
-    margin-bottom: 0.8rem;
-    position: relative;
-  }
-
-  .search-bar-wrapper input {
-    width: 100%;
-    padding: 6px 36px 6px 10px;
-    font-size: 0.75rem;
-    border-radius: 6px;
-  }
-
-  .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8rem;
-    color: #777;
-  }
-
-  .result-count {
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #555;
-  }
-
-  .table-wrapper {
-    overflow-x: auto;
-  }
-
-    .expense-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  /* Show only Title (1) and Actions (6) columns */
-  .expense-table th{
-
-    background-color: rgb(37, 37, 37);
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
+  .expense-table th,
   .expense-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 16px;
-    font-size: 13px;
-    margin-bottom: 10px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    box-shadow: 10px 3px 6px rgba(41, 41, 41, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 12px 8px;
+    font-size: 0.85rem;
   }
 
-  .expense-table th:nth-child(1),
-  .expense-table td:nth-child(1) {
-    display: table-cell;
-    font-weight: 600; /* title bold */
-  }
-
-  .expense-table th:nth-child(6),
-  .expense-table td:nth-child(6) {
-    display: table-cell;
-  }
-
-  /* Hide other columns */
+  /* Hide columns 2,3,4,5 */
   .expense-table th:nth-child(2),
   .expense-table th:nth-child(3),
   .expense-table th:nth-child(4),
@@ -344,135 +254,18 @@
     display: none;
   }
 
-  /* Actions column styling */
+  /* Keep first column (Title) and last column (Actions) visible */
+  .expense-table th:nth-child(1),
+  .expense-table td:nth-child(1),
+  .expense-table th:nth-child(6),
+  .expense-table td:nth-child(6) {
+    display: table-cell;
+  }
+
+  /* Adjust actions styling */
   .actions {
-    display: flex;
-    justify-content: flex-end; /* actions on right */
-    gap: 8px; /* spacing between icons */
-    white-space: nowrap;
-    font-weight: 600;
-    text-align: right;
-  }
-
-  .action-icon {
-    font-size: 0.75rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px; /* icon & text gap */
-    cursor: pointer;
-  }
-
-  /* Add text after icon */
-  .action-icon.view::after {
-    content: "View";
+    justify-content: flex-end;
+    gap: 6px;
     font-size: 0.75rem;
   }
-  .action-icon.edit::after {
-    content: "Edit";
-    font-size: 0.75rem;
-  }
-  .action-icon.delete::after {
-    content: "Delete";
-    font-size: 0.75rem;
-  }
-
-/* Modal adjustments */
-.modal {
-  width: 95%;
-  padding: 20px 16px;
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   background: linear-gradient(135deg, #f3f4f6, #e0f2fe); /* soft gradient */
-  border-radius: 16px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  
-}
-
-/* Modal header with icon */
-.modal::before {
-  content: "\1F4C4"; /* document icon emoji, replace with font-awesome if needed */
-  font-size: 24px;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  color: #3f62ff;
-}
-
-.modal h2 {
-  margin: 0 0 16px 40px; /* space for icon */
-  font-size: 20px;
-  font-weight: 700;
-  color: #3f62ff; /* header color */
-}
-
-/* Modal content */
-.modal p {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 16px;
-}
-
-/* Modal action buttons */
-.modal-actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-/* Buttons styling */
-.modal-actions button {
-  flex: 1;
-  padding: 10px 0;
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* center text and icon */
-  gap: 8px; /* space between icon & text */
-  text-align: center;
-  color: #fff;
-}
-
-/* Confirm button gradient */
-.modal-actions .confirm {
-  background: linear-gradient(135deg, #3f62ff, #6c92ff);
-}
-
-.modal-actions .confirm:hover {
-  background: linear-gradient(135deg, #3450d1, #5a7aff);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(63, 98, 255, 0.4);
-}
-
-/* Cancel button gradient */
-.modal-actions .cancel {
-  background: linear-gradient(135deg, #ff4d6d, #ff85a2);
-}
-
-.modal-actions .cancel:hover {
-  background: linear-gradient(135deg, #d13b56, #ff6b8c);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 77, 109, 0.4);
-}
-
-/* Icons inside buttons */
-.modal-actions .confirm::before {
-  content: "\2714"; /* checkmark */
-  font-size: 16px;
-}
-
-.modal-actions .cancel::before {
-  content: "\2716"; /* cross */
-  font-size: 16px;
-}
 }

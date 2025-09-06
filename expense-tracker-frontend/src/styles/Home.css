@@ -18,7 +18,7 @@
 }
 
 .hero-text {
-  flex: 1 1 400px;
+  flex: 1 1 265px;
   animation: fadeInLeft 1s ease forwards;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .hero-img {
-  flex: 1 1 400px;
+  flex: 1 1 350px;
   display: flex;
   justify-content: center;
   animation: fadeInRight 1s ease forwards;
@@ -139,7 +139,12 @@
   .hero {
     flex-direction: column-reverse;
     text-align: center;
+    padding: 5rem 2rem;
   }
+  .hero-img img {
+  max-width: 110%;
+  transition: transform 0.3s ease;
+}
 
   .hero-text h1 {
     font-size: 2rem;
@@ -148,11 +153,13 @@
   .hero-text p {
     font-size: 1rem;
   }
-
+  .feature {
+    margin-bottom: 200px;
+  }
   .features-grid {
     grid-template-columns: 1fr;
   }
-
+ 
   .hero-btn, .cta-btn {
     padding: 12px 25px;
     font-size: 0.95rem;
